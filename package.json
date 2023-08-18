@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "test": "node src/tests/unit_test.test.js"
   },
   "keywords": [],
   "author": "",
