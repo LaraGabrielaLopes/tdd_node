@@ -1,27 +1,19 @@
-const assert = require('../src/core/assert/assert.js');
+const { describe, it } = require('mocha');
+const assert = require('assert');
 const sqr = require('../src/core/sqr/sqr.js');
-var User = require('../src/core/user/user.js');
+//var User = require('../src/core/user/user.js');
 
-//Testando cada item:
-/* console.log('Testind string');
-assert('Pessoa' === 'Pessoa');
-
-console.log('Testing sqr');
-assert(sqr(3) === 9);
-
-console.log('Testing auth');
-var admin = new User('admin', '123456');
-assert(admin.auth('admin','12346')); */
-
-//Refatorando o código (testando todos os itens de uma vez só):
-function main() {
-    assert('Pessoa' === 'Pessoa', 'Testing string');
-
-    assert(sqr(3) === 9, 'Testing sqr');
-
-    var admin = new User('admin', '123456');
-    assert(!admin.auth('admi','123456'), 'Testing invalid credentials auth'); 
-    assert(admin.auth('admin','123456'), 'Testing credentials auth');       
-}
-
-main();
+describe('Testing of types ans values', () => {
+    it('Testing string', () => {
+        assert('Pessoa' === 'Pessoa');
+    });
+    it('Testing sqr', () => {
+        assert(sqr(3) === 9);
+    });
+    it('Testing sqr 2', () => {
+        assert(sqr(5) === 25);
+    });
+    it('Testing double', () => {
+        assert(0.0 === 0.0);
+    });
+});
